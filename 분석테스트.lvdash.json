@@ -1,0 +1,223 @@
+{
+  "datasets" : [ {
+    "name" : "3ab29efe",
+    "displayName" : "uhi_data_forh2o",
+    "query" : "SELECT * FROM project.project.uhi_data_forh2o"
+  } ],
+  "pages" : [ {
+    "name" : "page1",
+    "displayName" : "New Page",
+    "layout" : [ {
+      "widget" : {
+        "name" : "befe5b85",
+        "queries" : [ {
+          "name" : "main_query",
+          "query" : {
+            "datasetName" : "3ab29efe",
+            "fields" : [ {
+              "name" : "District",
+              "expression" : "`District`"
+            }, {
+              "name" : "green_rate",
+              "expression" : "`green_rate`"
+            } ],
+            "disaggregated" : true
+          }
+        } ],
+        "spec" : {
+          "version" : 3,
+          "widgetType" : "bar",
+          "encodings" : {
+            "x" : {
+              "fieldName" : "District",
+              "scale" : {
+                "type" : "categorical"
+              },
+              "axis" : {
+                "hideTitle" : true
+              },
+              "displayName" : "District"
+            },
+            "y" : {
+              "primary" : {
+                "fields" : [ {
+                  "fieldName" : "green_rate",
+                  "displayName" : "green_rate"
+                } ],
+                "scale" : {
+                  "type" : "quantitative"
+                }
+              },
+              "secondary" : {
+                "fields" : [ ],
+                "scale" : {
+                  "type" : "quantitative"
+                }
+              }
+            },
+            "color" : {
+              "legend" : {
+                "hide" : true
+              }
+            }
+          },
+          "mark" : {
+            "layout" : "stack"
+          }
+        }
+      },
+      "position" : {
+        "x" : 0,
+        "y" : 0,
+        "width" : 3,
+        "height" : 6
+      }
+    }, {
+      "widget" : {
+        "name" : "d1b92f2f",
+        "queries" : [ {
+          "name" : "main_query",
+          "query" : {
+            "datasetName" : "3ab29efe",
+            "fields" : [ {
+              "name" : "District",
+              "expression" : "`District`"
+            }, {
+              "name" : "avg(UHII)",
+              "expression" : "AVG(`UHII`)"
+            } ],
+            "disaggregated" : false
+          }
+        } ],
+        "spec" : {
+          "version" : 3,
+          "widgetType" : "bar",
+          "encodings" : {
+            "x" : {
+              "fieldName" : "District",
+              "scale" : {
+                "type" : "categorical"
+              },
+              "axis" : {
+                "hideTitle" : true
+              },
+              "displayName" : "District"
+            },
+            "y" : {
+              "fieldName" : "avg(UHII)",
+              "scale" : {
+                "type" : "quantitative",
+                "domain" : {
+                  "max" : 7,
+                  "min" : 3
+                }
+              },
+              "displayName" : "Average UHII"
+            }
+          }
+        }
+      },
+      "position" : {
+        "x" : 3,
+        "y" : 6,
+        "width" : 3,
+        "height" : 6
+      }
+    }, {
+      "widget" : {
+        "name" : "e5e1c46b",
+        "queries" : [ {
+          "name" : "main_query",
+          "query" : {
+            "datasetName" : "3ab29efe",
+            "fields" : [ {
+              "name" : "monthly(timestamp)",
+              "expression" : "DATE_TRUNC(\"MONTH\", `timestamp`)"
+            }, {
+              "name" : "avg(UHII)",
+              "expression" : "AVG(`UHII`)"
+            } ],
+            "disaggregated" : false
+          }
+        } ],
+        "spec" : {
+          "version" : 3,
+          "widgetType" : "bar",
+          "encodings" : {
+            "x" : {
+              "fieldName" : "monthly(timestamp)",
+              "scale" : {
+                "type" : "temporal"
+              },
+              "axis" : {
+                "hideTitle" : true
+              },
+              "displayName" : "timestamp"
+            },
+            "y" : {
+              "fieldName" : "avg(UHII)",
+              "scale" : {
+                "type" : "quantitative"
+              },
+              "displayName" : "Average UHII"
+            },
+            "label" : {
+              "show" : false
+            }
+          }
+        }
+      },
+      "position" : {
+        "x" : 0,
+        "y" : 6,
+        "width" : 3,
+        "height" : 6
+      }
+    }, {
+      "widget" : {
+        "name" : "4e5e7e39",
+        "queries" : [ {
+          "name" : "main_query",
+          "query" : {
+            "datasetName" : "3ab29efe",
+            "fields" : [ {
+              "name" : "District",
+              "expression" : "`District`"
+            }, {
+              "name" : "sum(Building_Density)",
+              "expression" : "SUM(`Building_Density`)"
+            } ],
+            "disaggregated" : false
+          }
+        } ],
+        "spec" : {
+          "version" : 3,
+          "widgetType" : "bar",
+          "encodings" : {
+            "x" : {
+              "fieldName" : "District",
+              "scale" : {
+                "type" : "categorical"
+              },
+              "displayName" : "District"
+            },
+            "y" : {
+              "fieldName" : "sum(Building_Density)",
+              "scale" : {
+                "type" : "quantitative"
+              },
+              "displayName" : "Sum of Building_Density"
+            }
+          }
+        }
+      },
+      "position" : {
+        "x" : 3,
+        "y" : 0,
+        "width" : 3,
+        "height" : 6
+      }
+    } ],
+    "pageType" : "PAGE_TYPE_CANVAS"
+  } ]
+}
